@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block add %}{% endblock %}</title>
+    <style>
+       .fixTableHead {
+      overflow-y: auto;
+      width: 55%;
+    margin: 0 auto;
+    height: 400px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    border: 1px solid #4C594F;
+    border-radius: 40px;
+    border-spacing: 0;
+    color: white;
+    background-color: rgba(45, 65, 115);
+    float: right;
+    overflow: hidden;
+    margin-right: 100px;
+    }
+    .fixTableHead thead th {
+      position: sticky;
+      top: 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th,
+    td {
+      padding: 10px;
+     border: 1px solid white;
+    }
+    th {
+      border-bottom: 1px solid #4C594F;
+    text-align: center;
+    }
+
+        .crit-input {
+           position: absolute;
+            bottom: 480px; /* Регулирование расстояния от нижнего края */
+            left: 6%; /* Регулирование расстояния от левого края */
+            width: 300px; /* Регулирование ширины */
+            height: 40px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 20px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+        }
+
+        .point-input {
+           position: absolute;
+            bottom: 50%; /* Регулирование расстояния от нижнего края */
+            left: 10%; /* Регулирование расстояния от левого края */
+            width: 150px; /* Регулирование ширины */
+            height: 40px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 20px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+        }
+
+        .add-crit-btn {
+         position: absolute;
+         bottom: 35px;
+         left: 7%;
+         width: 250px;
+         height: 60px;
+         background-color: white;
+         border-radius: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: black;
+         font-size: 22px;
+         font-weight: bold;
+         font-family: Arial, sans-serif;
+        }
+
+        .save{
+         position: absolute;
+         bottom: 35px;
+         right: 7%;
+         width: 250px;
+         height: 60px;
+         background-color: white;
+         border-radius: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: black;
+         font-size: 22px;
+         font-weight: bold;
+         font-family: Arial, sans-serif;
+         text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+{% block case %}{% endblock %}
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var id = urlParams.get('id');
+    var criteriaList = {{ criteria_list }};
+        var table = "<table>";
+        for (var i = 0; i < criteriaList.length; i++) {
+            table += "<tr>";
+            table += "<td>" + criteriaList[i].id + "</td>";
+            table += "<td>" + criteriaList[i].criteria_name + "</td>";
+            table += "<td>" + criteriaList[i].points + "</td>";
+            table += "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("tableContainer").innerHTML = table;
+
+</script>
+    <div class="fixTableHead"><div>
+    <table>
+      <tr>
+            <th>№</th>
+            <th>Критерии оценивания</th>
+            <th>Баллы</th>
+            <th>Удаление</th>
+        </tr>
+        {% for criteria in criteria_list %}
+        <tr>
+            <td>{{ criteria.id }}</td>
+            <td>{{ criteria.criteria_name }}</td>
+            <td>{{ criteria.points }}</td>
+            <td>
+                <form action="/delete/{{ criteria.id }}" method="post">
+                    <button type="submit">Удалить</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form method="post">
+    <input type="text" name="criteria_name" placeholder="Критерии оценивания" class="crit-input">
+    <input type="number" name="points" placeholder="Баллы" class="point-input">
+
+    <button type="submit" class="add-crit-btn">Добавить критерии</button>
+        </form>
+</body>
+</html>

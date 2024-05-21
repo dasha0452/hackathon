@@ -1,0 +1,273 @@
+body{
+    background: #0F2D69;
+}
+.tablic {
+  text-decoration: none;
+}
+
+.placeholder-box input {
+            position: absolute;
+            top: 140px; /* Регулирование расстояния от верхнего края */
+            left: 150px; /* Регулирование расстояния от левого края */
+            width: 350px; /* Регулирование ширины */
+            height: 60px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 40px; /* Делаем овальную иконку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 24px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+            font-weight: bold;
+}
+.placeholder-text {
+	display: none;
+	width: 20%;
+	line-height: 70px;
+	position: absolute;
+	left: 170px;
+	top: 140px;
+	bottom: 0;
+	color: white;
+	cursor: text;
+	user-select: none;
+	font-size: 24px; /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+     font-weight: bold;
+
+
+}
+
+.placeholder-box input:invalid + .placeholder-text {
+	display: block;
+}
+
+.placeholder2-box input {
+            position: absolute;
+            top: 250px; /* Регулирование расстояния от верхнего края */
+            left: 150px; /* Регулирование расстояния от левого края */
+            width: 350px; /* Регулирование ширины */
+            height: 60px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 40px; /* Делаем овальную иконку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 24px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+            font-weight: bold;
+}
+.placeholder2-text {
+	display: none;
+	width: 20%;
+	line-height: 290px;
+	position: absolute;
+	left: 170px;
+	top: 140px;
+	bottom: 0;
+	color: white;
+	cursor: text;
+	user-select: none;
+	font-size: 24px; /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+     font-weight: bold;
+
+
+}
+
+.placeholder2-box input:invalid + .placeholder2-text {
+	display: block;
+}
+
+.placeholder3-box input {
+            position: absolute;
+            top: 360px; /* Регулирование расстояния от верхнего края */
+            left: 150px; /* Регулирование расстояния от левого края */
+            width: 350px; /* Регулирование ширины */
+            height: 60px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 40px; /* Делаем овальную иконку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 24px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+            font-weight: bold;
+}
+.placeholder3-text {
+	display: none;
+	width: 20%;
+	line-height: 510px;
+	position: absolute;
+	left: 170px;
+	top: 140px;
+	bottom: 0;
+	color: white;
+	cursor: text;
+	user-select: none;
+	font-size: 24px; /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+     font-weight: bold;
+
+
+}
+
+.placeholder3-box input:invalid + .placeholder3-text {
+	display: block;
+}
+
+.placeholder4-box input {
+            position: absolute;
+            top: 140px; /* Регулирование расстояния от верхнего края */
+            right: 150px; /* Регулирование расстояния от левого края */
+            width: 350px; /* Регулирование ширины */
+            height: 60px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 40px; /* Делаем овальную иконку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 24px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+            font-weight: bold;
+}
+.placeholder4-text {
+	display: none;
+	width: 20%;
+	line-height: 70px;
+	position: absolute;
+	right: 170px;
+	top: 140px;
+	bottom: 0;
+	color: white;
+	cursor: text;
+	user-select: none;
+	font-size: 24px; /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+     font-weight: bold;
+
+
+}
+
+.placeholder4-box input:invalid + .placeholder4-text {
+	display: block;
+}
+
+.placeholder5-box input {
+            position: absolute;
+            top: 250px; /* Регулирование расстояния от верхнего края */
+            right: 150px; /* Регулирование расстояния от левого края */
+            width: 350px; /* Регулирование ширины */
+            height: 60px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 40px; /* Делаем овальную иконку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 24px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+            font-weight: bold;
+}
+.placeholder5-text {
+	display: none;
+	width: 20%;
+	line-height: 70px;
+	position: absolute;
+	right: 170px;
+	top: 250px;
+	bottom: 0;
+	color: white;
+	cursor: text;
+	user-select: none;
+	font-size: 24px; /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+     font-weight: bold;
+
+
+}
+
+.placeholder5-box input:invalid + .placeholder5-text {
+	display: block;
+}
+
+.placeholder6-box input {
+            position: absolute;
+            top: 360px; /* Регулирование расстояния от верхнего края */
+            right: 150px; /* Регулирование расстояния от левого края */
+            width: 350px; /* Регулирование ширины */
+            height: 60px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 40px; /* Делаем овальную иконку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 24px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+            font-weight: bold;
+}
+.placeholder6-text {
+	display: none;
+	width: 20%;
+	line-height: 510px;
+	position: absolute;
+	right: 170px;
+	top: 140px;
+	bottom: 0;
+	color: white;
+	cursor: text;
+	user-select: none;
+	font-size: 24px; /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+     font-weight: bold;
+
+
+}
+
+.placeholder6-box input:invalid + .placeholder6-text {
+	display: block;
+}
+.casebox input {
+            position: absolute;
+            top: 110px; /* Регулирование расстояния от верхнего края */
+            left: 60px; /* Регулирование расстояния от левого края */
+            width: 300px; /* Регулирование ширины */
+            height: 60px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 40px; /* Делаем овальную иконку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Цвет текста */
+            font-size: 22px; /* Размер текста */
+            font-family: Arial, sans-serif; /* Шрифт текста */
+}
+.casebox-text {
+	display: none;
+	width: 20%;
+	line-height: 70px;
+	position: absolute;
+	left: 80px;
+	top: 110px;
+	bottom: 0;
+	color: white;
+	cursor: text;
+	user-select: none;
+	font-size: 24px; /* Размер текста */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+     font-weight: bold;
+
+
+}
+
+.casebox input:invalid + .casebox-text {
+	display: block;
+}
+::placeholder {
+  color: white;
+}

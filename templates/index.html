@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block title %} Хакатон {% endblock %}</title>
+  <style>
+        table {
+    width: 55%;
+    margin: 0 auto;
+    height: 400px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    border: 1px solid #4C594F;
+    border-radius: 40px;
+    border-spacing: 0;
+    color: white;
+    background-color: rgba(45, 65, 115);
+    float: right;
+    overflow: hidden;
+    margin-right: 100px;
+   }
+   th, td {
+     padding: 10px;
+     border: 1px solid white;
+   }
+   thread th {
+    border-bottom: 1px solid #4C594F;
+    text-align: left;
+   }
+        .name{
+            position: absolute;
+            bottom: 500px; /* Регулирование расстояния от нижнего края */
+            left: 60px; /* Регулирование расстояния от левого края */
+            width: 300px; /* Регулирование ширины */
+            height: 50px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 30px; /* Делаем скруглённые углы */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 26px;
+        }
+        .icon {
+            position: absolute;
+            bottom: 140px; /* Регулирование расстояния от нижнего края */
+            left: 60px; /* Регулирование расстояния от левого края */
+            width: 300px; /* Регулирование ширины */
+            height: 330px; /* Регулирование высоты */
+            background-color: rgba(71, 93, 142); /* Цвет иконки */
+            border-radius: 30px; /* Делаем скруглённые углы */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 22px;
+
+        }
+        .code {
+         text-decoration: none;
+         position: absolute;
+         bottom: 35px;
+         right: 75px;
+         width: 250px;
+         height: 60px;
+         background-color: white;
+         border-radius: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: black;
+         font-size: 20px;
+         font-weight: bold;
+         font-family: Arial, sans-serif;
+        }
+        .back {
+         position: absolute;
+         bottom: 35px;
+         left: 75px;
+         width: 250px;
+         height: 60px;
+         background-color: white;
+         border-radius: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: black;
+         font-size: 20px;
+         font-weight: bold;
+         font-family: Arial, sans-serif;
+         text-decoration: none;
+        }
+        .back:hover {
+        background-color: rgba(45, 65, 115);
+
+    }
+        .centered {
+            width: 7px;
+            height: 40%;
+            background-color: white;
+            border-radius: 20px;
+            position: absolute;
+            top: 45%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+<body>
+<h1 style="color: white; font-family: Arial; text-align: center; font-size: 50px">Хакатон</h1>
+     <div class="code">Продолжить</div>
+     <div class="back">Перейти в меню</div>
+     <div class="centered"></div>
+
+<h1></h1>
+
+<h1 class="name">{{ case.case_name }}</h1>
+<p class="icon">{{ case.case_description }}</p>
+<table border="3" style="border:solid white">
+    <tr>
+        <th>№</th>
+        <th>Критерии</th>
+        <th>Баллы</th>
+    </tr>
+    {% for criterion in case.criteria %}
+        <tr>
+            <td class="criteria-number"></td>
+            <td>{{ criterion.criteria_name }}</td>
+            <td>{{ criterion.points }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const criteriaNumbers = document.querySelectorAll(".criteria-number");
+        criteriaNumbers.forEach((element, index) => {
+            element.textContent = index + 1;
+        });
+    });
+</script>
+<a href="http://127.0.0.1:5000/manager_menu"  class="back">Перейти в меню</a>
+<a href="http://127.0.0.1:5000/create_code"  class="code">Продолжить</a>
+</body>
+</html>
